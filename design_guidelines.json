@@ -1,0 +1,192 @@
+{
+  "theme": "dark",
+  "archetype": "THE PERFORMANCE PRO / HIGH PRECISION TRADING TERMINAL",
+  "overview": "Comprehensive design refinement guidelines for StockForge dark trading terminal. Preserves the authentic dark aesthetic while introducing softer panel depths, balanced micro-radii, refined contrast ratios, crisp skeleton shimmers, mobile-responsive table-to-card transformations, dynamic live brand CSS variable styling, and a clean Admin AI agent proposal card interface with explicit confirmation flows.",
+  "colors": {
+    "surfaces": [
+      {
+        "name": "page",
+        "kind": "solid",
+        "bg": "#080B11",
+        "on_bg": "#F3F4F6",
+        "on_bg_muted": "#9CA3AF",
+        "roles": {
+          "link": "#38BDF8",
+          "error": "#EF4444",
+          "success": "#10B981",
+          "warning": "#F59E0B"
+        }
+      },
+      {
+        "name": "panel",
+        "kind": "solid",
+        "bg": "#0D131F",
+        "on_bg": "#F9FAFB",
+        "on_bg_muted": "#94A3B8",
+        "roles": {
+          "border": "#1E293B",
+          "hover_bg": "#131C2E"
+        }
+      },
+      {
+        "name": "panel_secondary",
+        "kind": "solid",
+        "bg": "#111827",
+        "on_bg": "#F3F4F6",
+        "on_bg_muted": "#9CA3AF"
+      },
+      {
+        "name": "input_surface",
+        "kind": "solid",
+        "bg": "#0B101B",
+        "on_bg": "#F8FAFC",
+        "on_bg_muted": "#64748B",
+        "roles": {
+          "border": "#1E293B",
+          "focus_border": "#38BDF8"
+        }
+      },
+      {
+        "name": "header_glass",
+        "kind": "glass",
+        "contrast_against": "#080B11",
+        "guarantee": "backdrop-blur-xl bg-[#080B11]/85 border-b border-[#1E293B]/80",
+        "on_bg": "#F8FAFC",
+        "on_bg_muted": "#94A3B8"
+      },
+      {
+        "name": "proposal_card",
+        "kind": "solid",
+        "bg": "#111A2E",
+        "on_bg": "#F8FAFC",
+        "on_bg_muted": "#94A3B8",
+        "roles": {
+          "destructive_border": "#EF4444",
+          "destructive_bg": "#221118",
+          "success_border": "#10B981"
+        }
+      },
+      {
+        "name": "announcement_banner",
+        "kind": "solid",
+        "bg": "#13213C",
+        "on_bg": "#E0F2FE",
+        "on_bg_muted": "#7DD3FC",
+        "roles": {
+          "info_bg": "#0C2340",
+          "warning_bg": "#332204",
+          "alert_bg": "#361017"
+        }
+      },
+      {
+        "name": "inverse",
+        "kind": "solid",
+        "bg": "#F8FAFC",
+        "on_bg": "#080B11",
+        "on_bg_muted": "#334155"
+      }
+    ],
+    "accent": "#00E5FF",
+    "on_accent": "#080B11",
+    "accent_secondary": "#3B82F6",
+    "on_accent_secondary": "#FFFFFF",
+    "dynamic_css_vars": {
+      "accent_primary_var": "--a",
+      "accent_secondary_var": "--a2",
+      "instruction": "Admin Site settings live theme picker updates --a and --a2 on documentElement or root wrapper, re-rendering accent buttons, badges, highlights, and chart strokes immediately."
+    }
+  },
+  "typography": {
+    "fonts": {
+      "body": "Geist Variable, -apple-system, BlinkMacSystemFont, sans-serif",
+      "display": "JetBrains Mono Variable, monospace",
+      "forecast": "Space Grotesk Variable, sans-serif"
+    },
+    "scale_px": {
+      "display": 56,
+      "h1": 44,
+      "h2": 32,
+      "h3": 22,
+      "body": 16,
+      "caption": 14
+    },
+    "letter_spacing": {
+      "headers": "tracking-tight",
+      "labels_kicker": "tracking-[0.15em] uppercase text-xs font-mono",
+      "body": "tracking-normal leading-relaxed"
+    }
+  },
+  "entry_surfaces": {
+    "/": "split terminal hero — live market ticker + headline left, real-time quote preview cards and volume gauge right",
+    "/login": "branded terminal login — key market stats & live status left, high-contrast terminal auth card right",
+    "/admin": "control center hub — operational status & system toggles top, live site settings & AI agent command deck main"
+  },
+  "grids": {
+    "dashboard_mode": "High Density Grid (Mode B) — grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4",
+    "terminal_layout": "Header (h-14 fixed z-50 glass) + Sub-ticker banner + Main content area with px-4 sm:px-6 lg:px-8 py-6 + Mobile bottom navigation dock",
+    "mobile_tables": "Convert wide tabular data (markets, watchlist, admin users, orders) to card stacks below 768px (md breakpoint) with key metric pills."
+  },
+  "visual_enhancers": {
+    "panel_style": "sf-panel: rounded-xl bg-[#0D131F]/90 border border-[#1E293B]/80 shadow-[0_4px_20px_rgba(0,0,0,0.4)] backdrop-blur-md transition-all duration-200 hover:border-slate-700/80",
+    "kicker_style": "text-xs font-mono font-semibold uppercase tracking-[0.15em] text-[var(--a,#00E5FF)]",
+    "button_style": "sf-btn: rounded-lg px-4 py-2 font-mono text-sm font-medium transition-all duration-150 active:scale-[0.98] disabled:opacity-50",
+    "input_style": "sf-input: rounded-lg bg-[#0B101B] border border-[#1E293B] px-3.5 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-[var(--a,#00E5FF)] focus:border-[var(--a,#00E5FF)]",
+    "skeleton_shimmer": "bg-slate-800/40 relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_1.6s_infinite] before:bg-gradient-to-r before:from-transparent before:via-slate-700/20 before:to-transparent rounded-lg"
+  },
+  "admin_features_spec": {
+    "site_settings": {
+      "fields": [
+        "site_name",
+        "brand_color_primary",
+        "brand_color_secondary",
+        "homepage_headline",
+        "homepage_subheadline",
+        "announcement_banner_enabled",
+        "announcement_banner_text",
+        "announcement_banner_tone",
+        "section_toggles (inventory, markets, media, scanner, advisor, paper_trading, tiers)"
+      ],
+      "live_theme": "Applying changes immediately injects CSS variables to root and syncs to backend"
+    },
+    "ai_agent_chat": {
+      "model_badge": "Claude Sonnet 4.5",
+      "proposal_card_ux": {
+        "rule": "Zero direct mutations. Agent responses with actions MUST render an interactive Proposal Card.",
+        "card_elements": [
+          "Action Title & Category Badge (Settings, User, Item, Banner)",
+          "Diff Summary (Old value vs Proposed value)",
+          "Destructive flag styling (Red border & warning icon for delete operations)",
+          "Apply Button (data-testid='proposal-apply-btn')",
+          "Dismiss Button (data-testid='proposal-dismiss-btn')",
+          "Status Pill: 'Proposed' | 'Applied' | 'Dismissed'"
+        ]
+      }
+    },
+    "items_and_users_crud": {
+      "items": "Featured market items / signals CRUD with modal or inline edit and live state preview",
+      "users": "User management with role toggle (admin/user), tier upgrade/downgrade, and safe delete with confirmation modal"
+    }
+  },
+  "motion": {
+    "page_transitions": "Fade-in with subtle y-translation (opacity 0 -> 1, y: 6px -> 0px, duration 0.2s)",
+    "micro_interactions": "Button active scale (0.98), badge hover pulses, tab switch indicator slide",
+    "skeleton_animation": "Shimmer keyframe @keyframes shimmer { 100% { transform: translateX(100%); } }",
+    "toast_position": "bottom-right via Sonner"
+  },
+  "accessibility": {
+    "contrast_target": "APCA & WCAG AA 4.5:1 minimum on all body copy and interactive badges",
+    "focus_rings": "focus-visible:ring-2 focus-visible:ring-[var(--a,#00E5FF)] focus-visible:ring-offset-2 focus-visible:ring-offset-[#080B11]",
+    "reduced_motion": "Wrap transitions with @media (prefers-reduced-motion: reduce) or motion.div with reduced motion respect",
+    "data_testids": "All buttons, inputs, links, toggles, proposal cards, and metrics must include kebab-case data-testid tags"
+  },
+  "instructions_to_main_agent": [
+    "Retain the existing StockForge terminal look & feel, refining spacing from cramped margins to relaxed tailwind p-4/p-6/p-8 containers.",
+    "Refine all panel backgrounds using .sf-panel styling with subtle rounded-xl and translucent borders for cohesive modern depth.",
+    "Add the site-wide Announcement Banner at top of page when enabled in settings with customizable tones (info, warning, alert).",
+    "In Admin Control Centre, provide high-polish settings tabs: Site Settings (with color pickers updating --a and --a2 in real-time), Featured Items CRUD, Users management, and AI Agent Chat.",
+    "Ensure AI Agent chat strictly wraps actionable proposals in Proposal Cards containing Apply and Dismiss buttons, showing clear destructive visual warning for user or item deletions.",
+    "Ensure mobile viewports have smooth bottom nav docks and convert all horizontal overflow tables into clean metric cards.",
+    "Always use sonner for toasts mounted at bottom-right.",
+    "Ensure strict TypeScript typing throughout with proper data-testid attributes on all interactive controls."
+  ]
+}

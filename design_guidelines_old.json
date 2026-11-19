@@ -1,0 +1,225 @@
+{
+  "theme": "dark",
+  "design_archetype": "THE PERFORMANCE PRO / CYBERPUNK HUD TERMINAL",
+  "context": "DASHBOARDS & HIGH-PRECISION TRADING APP",
+  "emotional_tone": "Institutional quantitative precision meets high-speed cyberpunk telemetry. Ruthless information density, laser-sharp contrast, tactical HUD overlays, and futuristic probability physics.",
+  "entry_surfaces": {
+    "/": "Branded split hero terminal — Left: quantum market ticker, live telemetry metrics, instant launch CTA; Right: seeded live multi-asset orderbook & Monte Carlo forecast preview banner with live neon sparklines",
+    "/login": "Branded HUD access console — Left: tactical system status, active membership tiers matrix, real-time latency ping; Right: secure terminal key authentication form with biometric/instant demo bypass",
+    "/register": "Branded tactical onboarding station — Left: Tier breakdown & paper seed allocation preview ($100k testnet fund); Right: credentials registration & trader alias generator"
+  },
+  "colors": {
+    "surfaces": [
+      {
+        "name": "page",
+        "kind": "solid",
+        "bg": "#07090E",
+        "on_bg": "#F1F5F9",
+        "on_bg_muted": "#94A3B8",
+        "roles": {
+          "link": "#38BDF8",
+          "error": "#F87171",
+          "success": "#34D399",
+          "warning": "#FBBF24",
+          "accent_cyan": "#00F0FF",
+          "accent_emerald": "#10B981",
+          "accent_rose": "#F43F5E",
+          "accent_amber": "#F59E0B",
+          "accent_purple": "#A855F7"
+        }
+      },
+      {
+        "name": "panel",
+        "kind": "solid",
+        "bg": "#0D1117",
+        "on_bg": "#F8FAFC",
+        "on_bg_muted": "#94A3B8",
+        "roles": {
+          "border": "#1E293B",
+          "border_glow": "#00F0FF33",
+          "success": "#34D399",
+          "error": "#F87171"
+        }
+      },
+      {
+        "name": "panel_glass",
+        "kind": "glass",
+        "contrast_against": "#07090E",
+        "guarantee": "backdrop-blur-xl bg-[#0D1117]/85 border border-[#1E293B]/80 shadow-[0_4px_24px_rgba(0,0,0,0.6)]",
+        "on_bg": "#F8FAFC",
+        "on_bg_muted": "#94A3B8",
+        "roles": {
+          "cyan_glow": "#00F0FF",
+          "green_glow": "#10B981",
+          "red_glow": "#F43F5E"
+        }
+      },
+      {
+        "name": "modal_hud",
+        "kind": "solid",
+        "bg": "#0B0F19",
+        "on_bg": "#FFFFFF",
+        "on_bg_muted": "#94A3B8",
+        "roles": {
+          "bracket_border": "#00F0FF",
+          "grid_subtle": "#1E293B"
+        }
+      },
+      {
+        "name": "badge_bull",
+        "kind": "solid",
+        "bg": "#064E3B",
+        "on_bg": "#34D399",
+        "on_bg_muted": "#A7F3D0"
+      },
+      {
+        "name": "badge_bear",
+        "kind": "solid",
+        "bg": "#881337",
+        "on_bg": "#FDA4AF",
+        "on_bg_muted": "#FECDD3"
+      },
+      {
+        "name": "badge_cyber",
+        "kind": "solid",
+        "bg": "#082F49",
+        "on_bg": "#38BDF8",
+        "on_bg_muted": "#BAE6FD"
+      },
+      {
+        "name": "badge_gold",
+        "kind": "solid",
+        "bg": "#451A03",
+        "on_bg": "#FCD34D",
+        "on_bg_muted": "#FEF3C7"
+      },
+      {
+        "name": "inverse",
+        "kind": "solid",
+        "bg": "#F8FAFC",
+        "on_bg": "#020617",
+        "on_bg_muted": "#475569"
+      }
+    ],
+    "accent": "#00F0FF",
+    "on_accent": "#020617",
+    "bull_green": "#10B981",
+    "bear_red": "#F43F5E",
+    "support_blue": "#38BDF8",
+    "resistance_magenta": "#F472B6",
+    "confidence_cone_fill": "rgba(0, 240, 255, 0.08)",
+    "best_case_stroke": "#34D399",
+    "worst_case_stroke": "#F87171",
+    "avg_case_stroke": "#38BDF8"
+  },
+  "typography": {
+    "font_family_heading": "Space Grotesk, sans-serif",
+    "font_family_body": "DM Sans, sans-serif",
+    "font_family_mono": "JetBrains Mono, monospace",
+    "css_font_import": "@import \"@fontsource-variable/space-grotesk\"; @import \"@fontsource-variable/dm-sans\"; @import \"@fontsource-variable/jetbrains-mono\";",
+    "scale_px": {
+      "display": 56,
+      "h1": 44,
+      "h2": 32,
+      "h3": 24,
+      "h4": 18,
+      "body": 16,
+      "caption": 14
+    },
+    "rules": {
+      "headings": "font-heading uppercase tracking-wider font-bold text-slate-100",
+      "numerical_data": "font-mono tracking-tight tabular-nums",
+      "ticker_symbols": "font-mono font-bold tracking-widest text-[#00F0FF]",
+      "hud_labels": "text-xs font-mono uppercase tracking-[0.2em] text-slate-400"
+    }
+  },
+  "layout_and_grids": {
+    "philosophy": "Tactical HUD Grid with 1px border frames, corner bracket accents, and zero dead space. High scanability with responsive subgrids.",
+    "global_shell": "Sticky Tactical Header (Height: 64px, Glassmorphism with bottom border #1E293B) + Top Market Telemetry Ticker Marquee + Main Stage (Dynamic Bento) + Bottom Status Dock / Keyboard shortcuts bar",
+    "grid_modes": {
+      "dashboard": "grid grid-cols-1 md:grid-cols-12 gap-4 p-4 lg:p-6",
+      "terminal_view": "grid grid-cols-1 lg:grid-cols-12 gap-3 h-[calc(100vh-80px)]",
+      "prediction_modal_bento": "grid grid-cols-1 lg:grid-cols-3 gap-4"
+    },
+    "bento_spans": {
+      "main_chart": "col-span-12 lg:col-span-8 row-span-2",
+      "orderbook_or_predictions": "col-span-12 lg:col-span-4 row-span-2",
+      "signals_feed": "col-span-12 lg:col-span-4",
+      "metric_chips": "col-span-6 lg:col-span-3",
+      "full_directory_table": "col-span-12"
+    }
+  },
+  "visual_enhancers": {
+    "hud_corners": "Relative container with corner brackets (::before and ::after borders in cyan/slate)",
+    "scanline_effect": "Subtle repeating linear gradient 1px dark overlay on chart viewports (opacity 0.03)",
+    "dot_matrix_bg": "radial-gradient(rgba(0,240,255,0.07) 1px, transparent 0) with 24px 24px spacing",
+    "active_glow": "box-shadow: 0 0 15px rgba(0, 240, 255, 0.2), inset 0 0 15px rgba(0, 240, 255, 0.05)",
+    "bull_pulse": "box-shadow: 0 0 10px rgba(16, 185, 129, 0.3)",
+    "bear_pulse": "box-shadow: 0 0 10px rgba(244, 63, 94, 0.3)"
+  },
+  "core_feature_specifications": {
+    "nasdaq_and_crypto_directory": {
+      "description": "Comprehensive searchable/filterable directory containing all NASDAQ listings (~3000+ equities) and Top 100 Cryptocurrencies by market cap.",
+      "ui_pattern": "Virtual/paginated high-speed data grid with quick tabs ('All', 'NASDAQ Equities', 'Top 100 Crypto', 'Gainers', 'DeFi/AI Catalysts', 'Watchlist'). Real-time search by symbol & name, sector pills, market cap sorting, 24h delta sparklines, and single-click 'PREDICT' or 'TRADE' buttons with data-testid attributes.",
+      "european_locale_support": "Clean number formats with proper decimal separators and standard ISO dates."
+    },
+    "advanced_futuristic_prediction_system": {
+      "description": "Flagship predictive intelligence view opened when clicking any symbol or requesting AI forecast.",
+      "components": {
+        "cone_chart": "Recharts ComposedChart / Area + Line rendering Monte Carlo Simulation fan. Historical candle/line path connecting directly into future projection zone.",
+        "forecast_paths": [
+          {"name": "Best Case (95th Percentile / Bull Trigger)", "color": "#34D399", "strokeDasharray": "3 3", "label": "BULL_TARGET"},
+          {"name": "Average Case (50th Percentile / Expected Mean)", "color": "#38BDF8", "strokeWidth": 2.5, "label": "BASELINE_MEAN"},
+          {"name": "Worst Case (5th Percentile / Bear Liquidation)", "color": "#F87171", "strokeDasharray": "3 3", "label": "BEAR_FLOOR"}
+        ],
+        "support_and_resistance_rails": "Horizontal dashed tactical beam lines with price tags (R2, R1, PIVOT, S1, S2) and touch count frequency indicators.",
+        "confidence_corridor": "Area gradient filled with #00F0FF at 8% opacity representing the 1-sigma to 2-sigma probability distribution band.",
+        "timeframe_switchers": ["1D (Intraday Quantum)", "1W (Swing Forecast)", "1M (Macro Volatility Surface)"],
+        "telemetry_gauges": {
+          "win_probability_bar": "Segmented 0-100% horizontal neon bar with Bull/Bear win-rate ratio (e.g. 68.4% Bullish Probability)",
+          "volatility_score": "Implied Volatility gauge with percentile rank",
+          "var_risk_metric": "Value at Risk (95% 1-Day VaR) numerical readout",
+          "catalyst_summary": "AI generated bullet synopsis of technical indicators (RSI divergence, MACD histogram shift, orderbook imbalance)"
+        }
+      }
+    },
+    "deposit_and_investment_flows": {
+      "simulated_paper_deposit": "Instant testnet liquidity faucet ($1,000 to $100,000 instant credit to buying power with telemetry confirmation).",
+      "membership_and_crypto_checkout": "10-Tier Membership matrix ($9/mo to $999/mo Quantum VIP) with direct Bitcoin (BTC), Ethereum (ETH), and USDT test payments, plus simulated Stripe card checkout.",
+      "order_execution": "Instant Market / Limit / Stop-Loss order ticket with slippage simulator, leverage slider (1x - 50x), position size calculator, and real-time PnL tracker."
+    }
+  },
+  "component_architecture": {
+    "nav_header": "/app/frontend/src/components/layout/Navbar.tsx",
+    "market_ticker": "/app/frontend/src/components/layout/TickerTape.tsx",
+    "prediction_modal": "/app/frontend/src/components/prediction/PredictionDialog.tsx",
+    "prediction_chart": "/app/frontend/src/components/prediction/FuturisticPredictionChart.tsx",
+    "symbol_directory": "/app/frontend/src/components/directory/SymbolDirectoryTable.tsx",
+    "paper_trading_panel": "/app/frontend/src/components/trading/PaperTradingModule.tsx",
+    "deposit_dialog": "/app/frontend/src/components/wallet/DepositFundsDialog.tsx",
+    "tier_matrix": "/app/frontend/src/components/tiers/MembershipTiersMatrix.tsx",
+    "command_palette": "/app/frontend/src/components/hud/CommandPalette.tsx"
+  },
+  "motion_and_interactions": {
+    "library": "motion/react",
+    "guidelines": {
+      "stagger_children": "Stagger container items by 0.04s for data tables and metric cards",
+      "button_hover": "Hover scale 1.02 with neon border transition and subtle glow increase (duration: 0.15s ease)",
+      "chart_draw": "Line animations on mount with duration 0.8s easeOut for prediction projection paths",
+      "modal_entrance": "Scale from 0.96 to 1.0, opacity from 0 to 1 with slight spring physics (damping: 24, stiffness: 300)"
+    }
+  },
+  "accessibility_and_contrast": {
+    "apca_standards": "All text and interactive widgets strictly adhere to WCAG AA / APCA standards. Deep dark background #07090E pairs with #F8FAFC and #94A3B8 ensuring > 7.5:1 contrast ratio.",
+    "colorblind_safety": "Bull and Bear indicators always pair chromatic color (green/red) with directional arrows (▲ / ▼), numerical prefix (+ / -), and explicit text labels ('BULLISH' / 'BEARISH').",
+    "data_testids": "All buttons, inputs, tabs, search bars, prediction triggers, deposit buttons, and trade submit elements MUST include explicit kebab-case data-testid tags (e.g., data-testid='symbol-search-input', data-testid='predict-btn-AAPL', data-testid='timeframe-1w-tab', data-testid='deposit-submit-btn')."
+  },
+  "instructions_to_main_agent": [
+    "Retain the established dark cyberpunk HUD aesthetic — upgrade features systematically without breaking existing routes.",
+    "Implement comprehensive seed and simulated datasets for NASDAQ equities (AAPL, NVDA, TSLA, MSFT, AMZN, GOOGL, META, AMD, NFLX, INTC, + hundreds dynamically searchable) and Top 100 Crypto assets (BTC, ETH, SOL, XRP, DOGE, ADA, AVAX, LINK, NEAR, SUI, etc.).",
+    "The futuristic prediction chart MUST be a rich visual centerpiece: render actual Monte Carlo fan pathways, support (S1, S2) and resistance (R1, R2) dynamic levels, probability win-rate gauges, and 1D / 1W / 1M timeframe toggles.",
+    "Provide a robust Paper Trading and Deposit modal that allows simulated cash deposits ($5k, $10k, $50k, custom) as well as Bitcoin/Crypto test checkout for the 10-tier membership plan.",
+    "Ensure every interactive element has kebab-case data-testid attributes for thorough Playwright testing.",
+    "Use Base-UI and Shadcn primitives customized to cyberpunk HUD styles with sharp 1px borders, muted cyan glows, and JetBrains Mono numerical displays."
+  ]
+}
