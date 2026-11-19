@@ -1,0 +1,41 @@
+name: Expand StockForge deployment package
+
+on:
+  push:
+    paths:
+      - "stockforge-deploy-ready.zip"
+
+permissions:
+  contents: write
+
+jobs:
+  expand:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Expand application files
+        run: |
+          test -f stockforge-deploy-ready.zip
+          mkdir -p /tmp/stockforge-unpack
+          unzip -q stockforge-deploy-ready.zip -d /tmp/stockforge-unpack
+          test -d /tmp/stockforge-unpack/stockforge
+          rsync -a \
+            --exclude='.env*' \
+            --exclude='SECRETS_README.txt' \
+            --exclude='node_modules' \
+            --exclude='dist' \
+            --exclude='.git' \
+            /tmp/stockforge-unpack/stockforge/ ./
+          rm stockforge-deploy-ready.zip
+
+      - name: Commit expanded source
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Add StockForge application source" || echo "No changes to commit"
+          git push
