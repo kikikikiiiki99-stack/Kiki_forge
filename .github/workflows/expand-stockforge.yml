@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "stockforge-deploy-ready.zip"
+      - "stockforge-source-20261113.zip"
 
 permissions:
   contents: write
@@ -19,9 +20,10 @@ jobs:
 
       - name: Expand application files
         run: |
-          test -f stockforge-deploy-ready.zip
+          ZIP_FILE="$(find . -maxdepth 1 -type f -name '*.zip' | head -n 1)"
+          test -n "$ZIP_FILE"
           mkdir -p /tmp/stockforge-unpack
-          unzip -q stockforge-deploy-ready.zip -d /tmp/stockforge-unpack
+          unzip -q "$ZIP_FILE" -d /tmp/stockforge-unpack
           test -d /tmp/stockforge-unpack/stockforge
           rsync -a \
             --exclude='.env*' \
@@ -30,7 +32,7 @@ jobs:
             --exclude='dist' \
             --exclude='.git' \
             /tmp/stockforge-unpack/stockforge/ ./
-          rm stockforge-deploy-ready.zip
+          rm "$ZIP_FILE"
 
       - name: Commit expanded source
         run: |
