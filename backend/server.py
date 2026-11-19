@@ -500,3 +500,25 @@ async def ensure_indexes():
 @app.on_event("shutdown")
 async def shutdown_db_client():
     client.close()
+
+from pathlib import Path
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
+
+# Render health probe; deliberately does not require a database round-trip.
+@app.get("/healthz", include_in_schema=False)
+async def healthz():
+    return {"status": "ok"}
+
+# Serve the compiled Vite app from the same origin as /api so cookies and
+# Clerk's same-origin API proxy work in production.
+_FRONTEND_DIST = Path(__file__).resolve().parent.parent / "frontend" / "dist"
+if _FRONTEND_DIST.is_dir():
+    app.mount("/assets", StaticFiles(directory=_FRONTEND_DIST / "assets"), name="frontend-assets")
+
+    @app.get("/{frontend_path:path}", include_in_schema=False)
+    async def frontend_fallback(frontend_path: str):
+        candidate = (_FRONTEND_DIST / frontend_path).resolve()
+        if candidate.is_file() and _FRONTEND_DIST.resolve() in candidate.parents:
+            return FileResponse(candidate)
+        return FileResponse(_FRONTEND_DIST / "index.html")
