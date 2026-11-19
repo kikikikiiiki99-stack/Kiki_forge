@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: stockforge
+    runtime: docker
+    repo: https://github.com/kikikikiiiki99-stack/Kiki_forge
+    branch: main
+    plan: starter
+    region: frankfurt
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /healthz
+    envVars:
+      - key: MONGO_URL
+        sync: false
+      - key: DB_NAME
+        value: stockforge
+      - key: CLERK_PUBLISHABLE_KEY
+        sync: false
+      - key: CLERK_SECRET_KEY
+        sync: false
+      - key: EMERGENT_LLM_KEY
+        sync: false
+      - key: ADMIN_CODE
+        sync: false
+      - key: ADMIN_PASSPHRASE
+        sync: false
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: CORS_ORIGINS
+        value: "*"
