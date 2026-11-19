@@ -4,7 +4,7 @@ services:
     runtime: docker
     repo: https://github.com/kikikikiiiki99-stack/Kiki_forge
     branch: main
-    plan: starter
+    plan: free
     region: frankfurt
     dockerfilePath: ./Dockerfile
     healthCheckPath: /healthz
